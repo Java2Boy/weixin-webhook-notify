@@ -1,0 +1,21 @@
+name = "weixin-webhook-notify"
+main = "src/index.js"
+compatibility_date = "2026-09-27"
+workers_dev = true
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+WEIXIN_CHANNEL_VERSION = "2.4.9"
+WEIXIN_APP_ID = "bot"
+
+[[d1_databases]]
+binding = "WEIXIN_ACCOUNTS"
+database_name = "weixin-accounts-db"
+database_id = "721d2f10-9cfa-4c38-b057-8676969a160b"
+
+[assets]
+directory = "./public/"
+binding = "ASSETS"
+run_worker_first = true
